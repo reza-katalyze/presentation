@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Katalyze AI | Design-to-Presentation Studio</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="ambient-glow ambient-glow-one" aria-hidden="true"></div>
+    <div class="ambient-glow ambient-glow-two" aria-hidden="true"></div>
+
+    <div class="app-shell">
+      <aside class="control-panel">
+        <div class="brand-lockup">
+          <div class="brand-logo" aria-hidden="true">
+            <svg viewBox="0 0 120 120" role="img">
+              <defs>
+                <linearGradient id="katalyzeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#6e45ff" />
+                  <stop offset="100%" stop-color="#a37eff" />
+                </linearGradient>
+              </defs>
+              <rect x="5" y="5" width="110" height="110" rx="28" fill="#0d0520" stroke="#4d2ca9" stroke-width="4" />
+              <path d="M28 26V94M28 62L84 26M28 62L84 94M84 26V94" stroke="url(#katalyzeGradient)" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+            </svg>
+          </div>
+          <div>
+            <p class="eyebrow">Katalyze AI Studio</p>
+            <h1>Raw Design to Web Presentation</h1>
+            <p class="subtitle">
+              Convert rough design notes into a polished executive narrative with dark-purple
+              Katalyze branding, motion, charts, and flow visuals.
+            </p>
+          </div>
+        </div>
+
+        <div class="input-tools">
+          <label for="designInput">Raw design input</label>
+          <textarea id="designInput" spellcheck="false">
+TITLE: Katalyze AI Strategic Control Tower
+SUBTITLE: Turning fragmented raw designs into board-ready stories
+CLIENT: Katalyze AI
+---
+SLIDE: Why change now
+NARRATIVE: Enterprise teams struggle with slow decisions, disconnected intelligence, and low confidence in strategic bets.
+BULLETS:
+- Decisions are delayed by siloed analytics and manual reporting handoffs.
+- Product, GTM, and operations teams run on conflicting assumptions.
+- Leadership lacks a single operating view for prioritization.
+KPIS:
+- Decision cycle reduction|42
+- Insight adoption increase|68
+- Strategic alignment score|87
+SERIES:
+- Q1|28
+- Q2|42
+- Q3|61
+- Q4|79
+FLOW:
+- Data Sources->Intelligence Fabric
+- Intelligence Fabric->Decision Cockpit
+- Decision Cockpit->Execution Pods
+---
+SLIDE: Katalyze AI approach
+NARRATIVE: Build an intelligence operating layer that unifies signals, predicts outcomes, and guides operators in real time.
+BULLETS:
+- Ingest internal and external signals into one governed decision model.
+- Orchestrate model-driven recommendations with explainable confidence.
+- Drive accountable execution loops across teams.
+KPIS:
+- Forecast accuracy gain|31
+- Time-to-insight improvement|54
+- Initiative throughput lift|36
+SERIES:
+- Sprint 1|35
+- Sprint 2|48
+- Sprint 3|63
+- Sprint 4|81
+FLOW:
+- Market Signals->AI Model Core
+- Product Telemetry->AI Model Core
+- AI Model Core->Strategy Workspace
+- Strategy Workspace->Operating Reviews
+---
+SLIDE: Value delivered
+NARRATIVE: Katalyze AI creates measurable advantage in speed, confidence, and outcome quality.
+BULLETS:
+- More high-quality decisions at executive and team level.
+- Better capital allocation and portfolio sequencing.
+- Clear ownership loops and transparent value tracking.
+KPIS:
+- EBITDA impact potential|24
+- Revenue acceleration|18
+- Program risk reduction|47
+SERIES:
+- Month 1|22
+- Month 2|39
+- Month 3|58
+- Month 4|76
+- Month 5|88
+FLOW:
+- Signal Intake->Decision Engine
+- Decision Engine->Action Planning
+- Action Planning->Value Tracking
+          </textarea>
+
+          <div class="button-row">
+            <button id="generateBtn" class="btn btn-primary" type="button">Generate deck</button>
+            <button id="sampleBtn" class="btn btn-secondary" type="button">Reload sample</button>
+          </div>
+
+          <div class="button-row compact">
+            <button id="uploadBtn" class="btn btn-ghost" type="button">Import .txt or .json</button>
+            <button id="exportBtn" class="btn btn-ghost" type="button">Export deck JSON</button>
+            <input id="fileInput" type="file" accept=".txt,.md,.json" />
+          </div>
+
+          <details class="format-guide">
+            <summary>Input format guide</summary>
+            <ul>
+              <li>Use <code>TITLE:</code>, <code>SUBTITLE:</code>, and <code>CLIENT:</code> at top level.</li>
+              <li>Separate slides using <code>---</code>, then define each with <code>SLIDE:</code>.</li>
+              <li>Use sections: <code>NARRATIVE:</code>, <code>BULLETS:</code>, <code>KPIS:</code>, <code>SERIES:</code>, <code>FLOW:</code>.</li>
+              <li>Section entries use dash-prefixed lines, for example <code>- Label|42</code>.</li>
+              <li>Flow lines use arrows, for example <code>- Data Sources-&gt;Decision Engine</code>.</li>
+            </ul>
+          </details>
+        </div>
+      </aside>
+
+      <main class="presentation-panel">
+        <header class="presentation-header">
+          <div class="header-brand">
+            <div class="header-brand-logo" aria-hidden="true">
+              <svg viewBox="0 0 120 120">
+                <rect x="8" y="8" width="104" height="104" rx="24" fill="#12082b" stroke="#6e45ff" stroke-width="4" />
+                <path d="M30 26V94M30 62L82 26M30 62L82 94M82 26V94" stroke="#a989ff" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+              </svg>
+            </div>
+            <div>
+              <p class="eyebrow">Katalyze AI Presentation</p>
+              <p id="deckTitle" class="header-title">Executive transformation narrative</p>
+            </div>
+          </div>
+
+          <div class="header-controls">
+            <button id="prevBtn" class="icon-btn" type="button" aria-label="Previous slide">◀</button>
+            <button id="playBtn" class="icon-btn" type="button" aria-label="Toggle autoplay">▶</button>
+            <button id="nextBtn" class="icon-btn" type="button" aria-label="Next slide">▶▶</button>
+          </div>
+        </header>
+
+        <section id="deckViewport" class="deck-viewport" aria-live="polite"></section>
+
+        <footer class="presentation-footer">
+          <div class="footer-top">
+            <div class="progress-wrap" aria-hidden="true">
+              <div id="progressBar" class="progress-bar"></div>
+            </div>
+            <p id="slideCounter" class="slide-counter">Slide 1 / 1</p>
+          </div>
+
+          <div class="footer-bottom">
+            <div class="scenario-toggle" role="group" aria-label="Scenario">
+              <button class="scenario-btn is-selected" data-scenario="base" type="button">Base case</button>
+              <button class="scenario-btn" data-scenario="conservative" type="button">Conservative</button>
+              <button class="scenario-btn" data-scenario="aggressive" type="button">Aggressive</button>
+            </div>
+            <nav id="slideNav" class="slide-nav" aria-label="Slide navigation"></nav>
+          </div>
+        </footer>
+      </main>
+    </div>
+
+    <template id="slideTemplate">
+      <article class="slide">
+        <div class="slide-watermark" aria-hidden="true">KATALYZE AI</div>
+        <header class="slide-header reveal">
+          <p class="slide-index"></p>
+          <h2 class="slide-title"></h2>
+          <p class="slide-narrative"></p>
+        </header>
+        <section class="slide-layout">
+          <div class="slide-left">
+            <div class="content-card reveal" data-delay="0.05">
+              <h3>Key themes</h3>
+              <ul class="bullet-list"></ul>
+            </div>
+            <div class="content-card reveal" data-delay="0.15">
+              <h3>Operating flow</h3>
+              <div class="flow-wrapper"></div>
+            </div>
+          </div>
+          <div class="slide-right">
+            <div class="kpi-grid reveal" data-delay="0.2"></div>
+            <div class="content-card chart-card reveal" data-delay="0.3">
+              <h3>Performance trajectory</h3>
+              <div class="chart-shell"></div>
+            </div>
+          </div>
+        </section>
+      </article>
+    </template>
+
+    <script src="script.js"></script>
+  </body>
+</html>
